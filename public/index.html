@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitGists</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>GitGists</h1>
+    <p class="tagline">Real code examples from GitHub, explained by AI</p>
+  </header>
+
+  <main>
+    <section id="search-section">
+      <div class="search-bar">
+        <input
+          type="text"
+          id="query-input"
+          placeholder="e.g. debounce in JavaScript, Python FastAPI auth, React useEffect..."
+          autocomplete="off"
+        >
+        <button id="search-btn">Search</button>
+      </div>
+    </section>
+
+    <section id="loading-section" class="hidden">
+      <div class="skeleton-block"></div>
+      <div class="skeleton-block short"></div>
+      <div class="skeleton-block"></div>
+      <div class="skeleton-block short"></div>
+    </section>
+
+    <section id="results-section" class="hidden">
+      <div id="sources-panel">
+        <h3>Sources</h3>
+        <div id="source-chips"></div>
+      </div>
+      <div id="answer-panel">
+        <h3>Example &amp; Integration</h3>
+        <div id="answer-content"></div>
+      </div>
+    </section>
+
+    <section id="chat-section" class="hidden">
+      <h3>Follow-up Questions</h3>
+      <div id="chat-messages"></div>
+      <div class="chat-input-row">
+        <input type="text" id="chat-input" placeholder="Ask a follow-up question...">
+        <button id="chat-send-btn">Send</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
